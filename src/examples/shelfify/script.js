@@ -76,7 +76,7 @@ function init() {
     camera.position.set(1, -1, 1) // like perspective view
 
     // very light grey for background, like rhino
-    scene.background = new THREE.Color( ts00FFF9 )
+    scene.background = new THREE.Color( '#00f0ff' )
     //scene.background = new THREE.Color('whitesmoke') 
 
     // create the renderer and add it to the html
