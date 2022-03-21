@@ -147,13 +147,13 @@ input {width: 100%;}
      }
 
 
-#length{ 
-   color: rgb(4, 255, 255);font-family:helvetica;
-   background-color:rgb(255, 0, 242);
+#cost{ 
+   color: rgb(255, 255, 255);font-family:helvetica;
+   padding-right: 5px;
   }
-#len{ 
-    color: rgb(49, 192, 180);font-family:helvetica;
-    background-color:rgb(255, 2, 200);
+#area{ 
+    color: rgb(255, 255, 255);font-family:helvetica;
+    padding-right: 5px;
    }
    
     

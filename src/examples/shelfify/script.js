@@ -59,7 +59,7 @@ function getInputs() {
 }
 
 // more globals
-let scene, camera, renderer, controls
+let scene, camera, renderer, controls, cost, area
 
 /**
  * Sets up the scene, camera, renderer, lights and controls and starts the animation
@@ -151,12 +151,31 @@ function collectResults(responseJson) {
         for( let j = 0; j < branch.length; j ++) {
           // ...load rhino geometry into doc
           const rhinoObject = decodeItem(branch[j])
+                   //GET VALUES
+        if (values[i].ParamName == "RH_OUT:cost") {
+          //length = JSON.parse(responseJson.values[i].InnerTree['{ 0; }'][0].data)
+          cost = Math.round(branch[j].data)
+         
+          console.log(cost)
+        }
+
+        if (values[i].ParamName == "RH_OUT:area") {
+          //length = JSON.parse(responseJson.values[i].InnerTree['{ 0; }'][0].data)
+          area = Math.round(branch[j].data)
+          console.log(area)
+        }  
           if (rhinoObject !== null) {
             doc.objects().add(rhinoObject, null)
+            
           }
         }
       }
     }
+
+    //GET VALUES
+document.getElementById('cost').innerText = " rough cost estimation " + cost + " €"
+document.getElementById('area').innerText = " Total area  = " + area + " m²"
+//GET VALUES
 
     if (doc.objects().count < 1) {
       console.error('No rhino objects to load!')
